@@ -11,31 +11,27 @@ document.getElementById("weatherSubmit").addEventListener("click", function(even
       .then(function(response) {
         return response.json();
       }).then(function(json) {
-        alert("inside json function");
 
         let results = "";
-        results += '<h2>Weather in ' + json.name + "</h2>";
+        results += '<div class = weatherbox><h2 class = evenbigger>' + json.name;
         for (let i=0; i < json.weather.length; i++) {
-            results += '<img src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/>';
+            results += '<img class = "weathericon" src="http://openweathermap.org/img/w/' + json.weather[i].icon + '.png"/></h2>';
         }
-        results += '<h2>' + json.main.temp + " &deg;F</h2>"
-        results += "<p>"
-        results += '<div id=currentWeatherInfo>';
-        results += '<h2 id="currentWeatherTemperature">' + parseInt(json.main.temp) + "<span id='degrees'>&deg;F</span></h2></div>"
-        results += '<div id=resultDescription><p id="currentWeatherDescription">'
-        results += 'Feels like ' + parseInt(json.main.feels_like) + '<span id="degreesSmaller">&deg;F</span><br>';
-        results += 'Min. today ' + parseInt(json.main.temp_min) + '<span id="degreesSmaller">&deg;F</span><br>';
-        results += 'Max today ' + parseInt(json.main.temp_max) + '<span id="degreesSmaller">&deg;F</span><br>';
-        results += '</p></div>';
+        results += '<h2 class = bigtemp>' + json.main.temp + " &deg;F</h2>"
+        results += "<p class = pipoca>"
+        results += '<strong>Feels like:</strong> ' + parseInt(json.main.feels_like) + '<span>&deg;F</span><br>';
+        results += '<strong>Min. Temperature</strong>: ' + parseInt(json.main.temp_min) + '<span>&deg;F</span><br>';
+        results += '<strong>Max. Temperature</strong>: ' + parseInt(json.main.temp_max) + '<span>&deg;F</span><br>';
+       
   
-        results += '<div id="otherInfoContainer"><p class="otherInfo">Humidity: ' + parseInt(json.main.humidity) + '%</p>';
-        results += '<p class="otherInfo">Wind: ' + parseInt(json.wind.speed) + 'mph</p></div>';
+        results += '<div><p class = "pipoca"><strong>Humidity:</strong> ' + parseInt(json.main.humidity) + '%</p>';
+        results += '<p> <strong>Wind:</strong> ' + parseInt(json.wind.speed) + 'mph</p>';
         for (let i=0; i < json.weather.length; i++) {
             results += json.weather[i].description
             if (i !== json.weather.length - 1)
             results += ", "
         }
-        results += "</p>";
+        results += "</p></div>";
         document.getElementById("weatherResults").innerHTML = results;
         });
         const url2 = "http://api.openweathermap.org/data/2.5/forecast?q=" + value + ", US&units=imperial" + "&APPID=cb554d9b11910848445590e424d7e288";
