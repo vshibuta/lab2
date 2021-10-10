@@ -1,7 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+  }
 body {
     font-family: 'Poppins', sans-serif;
+
+}
+.headerp{
+    font-size:100px;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+    justify-content: center;
+}
+.header{
+    background-image: url(./images/background.jpg);
+    min-height: 400px;
+   
+    color:  white;
+    
+
+}
+.weathericon{
+    image-rendering: pixelated;
 }
 
+
+h2.bigtemp {
+    font-size: 50px;
+}
+
+h2.evenbigger{
+    font-size: 65px;
+}
+.weatherbox{
+    background: #eaeaead0;
+    padding: 2em;
+    border-radius: 30px;
+    margin: 1em;
+}
 form {
     font-size: 20px;
     justify-content: center;
@@ -18,7 +58,7 @@ input#weatherInput {
 input#weatherSubmit {
     border-radius: 4px;
     font-size: 30px;
-    background: #4CAF50;
+    background: #1E90FF;
     padding: 10px 24px;
     color: white;
     transition-duration: 0.4s;
@@ -32,6 +72,7 @@ input#weatherSubmit:hover {
 div#weatherResults {text-align: center;padding: 2em;border-radius: 30px;margin: 1em;}
 
 
-.card {background: #eaeaea2b;padding: 2em;border-radius: 30px;margin: 1em;}
+.card {background: #eaeaead0;padding: 2em;border-radius: 30px;margin: 1em;}
 
-.box{background: #7c7c7c2b;padding: 2em;border-radius: 30px;margin: 1em;};
+.box{background: #eaeaead0;padding: 2em;border-radius: 30px;margin: 1em;};
+
